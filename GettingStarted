@@ -1,0 +1,61 @@
+docker login <artifact address>
+docker login artifact.xyz.com
+--provide user name[ShortID] and password [token from set me up jfrog] when prompted
+
+============================================
+List images:
+docker images
+
+============================================
+Run image:
+docker run -<mode> <image ID>
+docker run -it 971e2cfec6f3
+
+============================================
+List containers:
+docker container ls
+or, docker container list
+or, docker container ps
+or, docker ps
+
+============================================
+Stop a running container:
+docker stop <container id>
+e.g., docker stop 0d9cf54da20f
+
+============================================
+List stopped containers:
+docker ps -a 
+
+============================================
+Restart a stopped container:
+docker restart <container id>
+docker restart 0d9cf54da20f
+
+============================================
+Kill a container:
+docker kill <container id>
+docker kill 0d9cf54da20f
+
+============================================
+Build docker image from dockerfile:
+docker build -f <docker file path> -t <tag name> .
+docker build -f Dockerfile -t myimage:1.0.0 .
+
+============================================
+Creating tag for remote artifact:
+docker tag <local tag> <destination tag>
+docker tag myImage:1.0.0 artifact.xyz.com/artifact-path/myImage:1.0.0
+
+============================================
+Push image to docker repo:
+docker push <tagname>
+docker push artifact.xyz.com/artifact-path/myImage:1.0.0
+
+============================================
+Run with local mount 
+docker run -v <localdir>:<containerdir> <imageid>
+docker run -v c:\test:c:\xyz\abc 0fdsn23  
+
+============================================
+
